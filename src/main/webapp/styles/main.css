@@ -1,0 +1,52 @@
+.header__title {
+    margin: 10px;
+}
+
+.main__panel {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.main__profile {
+    float: left;
+    margin: 10px;
+    border: 1px solid lightgrey;
+    padding: 10px;
+    max-width: 500px;
+    min-width: 300px;
+}
+
+.main__profile-img-container {
+    display: flex;
+}
+
+.main__profile-item-img {
+    width: 150px;
+}
+
+.main__profile-item-header {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.main__profile-characteristic-item {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.main__profile-item-description {
+    padding-top: 10px;
+}
+
+.main__nav-link {
+    margin: 10px;
+}
+
+.main__form-field {
+    margin: 10px;
+}
+
+.main__form-field-label {
+    display: inline-block;
+    width: 100px;
+}
