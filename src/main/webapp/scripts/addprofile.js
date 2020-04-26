@@ -19,6 +19,7 @@ $(document).ready(function() {
     $('#addProfileBtn').click(function () {
         $.post(datingUrl.getBaseUrl() + 'api/profile/', {
             name: $('#name').val(),
+            gender: $('#gender').val(),
             height: $('#height').val(),
             weight: $('#weight').val(),
             description: $('#description').val(),

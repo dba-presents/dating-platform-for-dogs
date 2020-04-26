@@ -7,6 +7,7 @@ public class NewProfileRequest {
     private Integer weight;
     private String description;
     private Long breedId;
+    private Character gender;
 
     public String getName() {
         return name;
@@ -46,5 +47,13 @@ public class NewProfileRequest {
 
     public void setBreedId(Long breedId) {
         this.breedId = breedId;
+    }
+
+    public Character getGender() {
+        return gender;
+    }
+
+    public void setGender(Character gender) {
+        this.gender = gender;
     }
 }

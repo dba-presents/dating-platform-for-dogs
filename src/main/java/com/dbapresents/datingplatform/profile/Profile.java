@@ -31,6 +31,9 @@ public class Profile {
     @JoinColumn(name = "PRO_BRE_ID")
     private Breed breed;
 
+    @Column(name = "PRO_GENDER")
+    private Character gender;
+
     public Long getId() {
         return id;
     }
@@ -85,5 +88,13 @@ public class Profile {
 
     public void setBreed(Breed breed) {
         this.breed = breed;
+    }
+
+    public Character getGender() {
+        return gender;
+    }
+
+    public void setGender(Character gender) {
+        this.gender = gender;
     }
 }

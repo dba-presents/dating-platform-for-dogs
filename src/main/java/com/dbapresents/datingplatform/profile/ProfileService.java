@@ -27,6 +27,7 @@ public class ProfileService {
             profile.setBreed(breedRepository.findById(newProfileRequest.getBreedId())
                     .orElse(null));
         }
+        profile.setGender(newProfileRequest.getGender());
         profileRepository.save(profile);
     }
 
