@@ -8,4 +8,54 @@
         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
         http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.8.xsd">
 
+    <changeSet id="Create BREEDS table" author="DBA presents">
+        <createTable tableName="BREEDS">
+            <column name="BRE_ID" type="int" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_BREEDS" />
+            </column>
+            <column name="BRE_NAME" type="varchar(100)">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="List of BREEDS" author="DBA presents">
+        <insert tableName="BREEDS">
+            <column name="BRE_NAME" value="Golden Retriever" />
+        </insert>
+        <insert tableName="BREEDS">
+            <column name="BRE_NAME" value="American Staffordshire Terrier" />
+        </insert>
+        <insert tableName="BREEDS">
+            <column name="BRE_NAME" value="German Shepherd Doger" />
+        </insert>
+    </changeSet>
+
+    <changeSet id="Create PROFILES table" author="DBA presents">
+        <createTable tableName="PROFILES">
+            <column name="PRO_ID" type="int" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_PROFILES" />
+            </column>
+            <column name="PRO_NAME" type="varchar(100)">
+                <constraints nullable="false" />
+            </column>
+            <column name="PRO_BRE_ID" type="int" />
+            <column name="PRO_HEIGHT" type="int" />
+            <column name="PRO_WEIGHT" type="int" />
+            <column name="PRO_DESCRIPTION" type="varchar(4000)" />
+            <column name="PRO_IMAGE_URL" type="varchar(100)" />
+        </createTable>
+    </changeSet>
+
+    <changeSet id="Create IX_PRO_BRE_ID" author="DBA presents">
+        <createIndex tableName="PROFILES" indexName="IX_PRO_BRE_ID">
+            <column name="PRO_BRE_ID" />
+        </createIndex>
+    </changeSet>
+
+    <changeSet id="Create FK_PRO_BRE_ID" author="DBA presents">
+        <addForeignKeyConstraint baseTableName="PROFILES" baseColumnNames="PRO_BRE_ID" constraintName="FK_PRO_BRE_ID"
+                                 referencedTableName="BREEDS" referencedColumnNames="BRE_ID" />
+    </changeSet>
+
 </databaseChangeLog>
