@@ -1,6 +1,5 @@
 spring:
-    profiles:
-        active: mysql
+    profiles: mysql
     datasource:
         url: jdbc:mysql://localhost:3306/dating?useUnicode=yes&characterEncoding=UTF-8&serverTimezone=UTC
         username: webuser
