@@ -43,3 +43,5 @@ spring:
             hibernate.generate_statistics: true
     main:
         log-startup-info: false
+    liquibase:
+        change-log: classpath:db-changelog.xml
