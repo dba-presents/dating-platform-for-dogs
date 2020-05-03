@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+        http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.8.xsd">
+
+    <include file="db-changelog.xml" />
+
+    <changeSet id="Sample profiles" author="DBA presents">
+        <insert tableName="PROFILES">
+            <column name="PRO_NAME" value="Romantic Soul" />
+            <column name="PRO_BRE_ID" valueComputed="(select BRE_ID from BREEDS where BRE_NAME = 'American Staffordshire Terrier')" />
+            <column name="PRO_HEIGHT" valueNumeric="40" />
+            <column name="PRO_WEIGHT" valueNumeric="30" />
+            <column name="PRO_DESCRIPTION" value="I believe that chasing cats brings dogs together." />
+            <column name="PRO_IMAGE_URL" value="/img/RomanticSoul.jpg" />
+        </insert>
+        <insert tableName="PROFILES">
+            <column name="PRO_NAME" value="Caesar" />
+            <column name="PRO_HEIGHT" valueNumeric="50" />
+            <column name="PRO_WEIGHT" valueNumeric="20" />
+            <column name="PRO_DESCRIPTION" value="Happiness is my way of living. Will you be happy with me?" />
+            <column name="PRO_IMAGE_URL" value="/img/Caesar.jpg" />
+        </insert>
+        <insert tableName="PROFILES">
+            <column name="PRO_NAME" value="Prince Charming" />
+            <column name="PRO_BRE_ID" valueComputed="(select BRE_ID from BREEDS where BRE_NAME = 'Golden Retriever')" />
+            <column name="PRO_HEIGHT" valueNumeric="80" />
+            <column name="PRO_WEIGHT" valueNumeric="40" />
+            <column name="PRO_DESCRIPTION" value="I am a mature dog that is looking for calm and stability." />
+            <column name="PRO_IMAGE_URL" value="/img/PrinceCharming.jpg" />
+        </insert>
+        <insert tableName="PROFILES">
+            <column name="PRO_NAME" value="Cutie Pie" />
+            <column name="PRO_BRE_ID" valueComputed="(select BRE_ID from BREEDS where BRE_NAME = 'Golden Retriever')" />
+            <column name="PRO_HEIGHT" valueNumeric="60" />
+            <column name="PRO_WEIGHT" valueNumeric="30" />
+            <column name="PRO_DESCRIPTION" value="I have my issues but I am looking for a dog who will love me after all." />
+            <column name="PRO_IMAGE_URL" value="/img/CutiePie.jpg" />
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

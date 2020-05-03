@@ -44,4 +44,4 @@ spring:
     main:
         log-startup-info: false
     liquibase:
-        change-log: classpath:db-changelog.xml
+        change-log: classpath:db-with-sample-data.xml
