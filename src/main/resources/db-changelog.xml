@@ -29,6 +29,10 @@
         <insert tableName="BREEDS">
             <column name="BRE_NAME" value="German Shepherd Doger" />
         </insert>
+
+        <rollback>
+            <delete tableName="BREEDS" />
+        </rollback>
     </changeSet>
 
     <changeSet id="Create PROFILES table" author="DBA presents">
