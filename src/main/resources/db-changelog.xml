@@ -68,4 +68,21 @@
         </addColumn>
     </changeSet>
 
+    <changeSet id="Update NULL in PRO_GENDER to U" author="DBA presents">
+        <update tableName="PROFILES">
+            <column name="PRO_GENDER" value="U" />
+            <where>PRO_GENDER is null</where>
+        </update>
+        <rollback>
+            <update tableName="PROFILES">
+                <column name="PRO_GENDER" />
+                <where>PRO_GENDER = 'U'</where>
+            </update>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="Add not null constraint on PRO_GENDER" author="DBA presents">
+        <addNotNullConstraint tableName="PROFILES" columnName="PRO_GENDER" columnDataType="char(1)" />
+    </changeSet>
+
 </databaseChangeLog>
