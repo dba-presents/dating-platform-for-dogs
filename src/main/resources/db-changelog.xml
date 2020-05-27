@@ -85,4 +85,18 @@
         <addNotNullConstraint tableName="PROFILES" columnName="PRO_GENDER" columnDataType="char(1)" />
     </changeSet>
 
+    <changeSet id="Drop PRO_GENDER" author="DBA presents">
+        <dropColumn tableName="PROFILES" columnName="PRO_GENDER" />
+        <rollback>
+            <addColumn tableName="PROFILES">
+                <column name="PRO_GENDER" type="char(1)" />
+            </addColumn>
+            <update tableName="PROFILES">
+                <column name="PRO_GENDER" value="U" />
+                <where>PRO_GENDER is null</where>
+            </update>
+            <addNotNullConstraint tableName="PROFILES" columnName="PRO_GENDER" columnDataType="char(1)" />
+        </rollback>
+    </changeSet>
+    
 </databaseChangeLog>
